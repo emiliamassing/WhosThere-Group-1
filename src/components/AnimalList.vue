@@ -3,7 +3,7 @@ import { IAnimal } from '../models/IAnimal';
 import { IAnimalDesc } from '../models/IAnimalDesc';
 
 
-const arrayOfAnimals: IAnimal = [
+const arrayOfAnimals: IAnimal[] = [
     {
         name: 'Zebra',
         picture: './assets/zebra.png',
@@ -211,12 +211,18 @@ const arrayOfAnimals: IAnimal = [
             Climber: true
         }
     }                
-]
+];
+
+const gridClass: string ="gridContainer";
 
 </script>
 
 <template>
-    <div><img :src=""></div>
+    <div :class="gridClass">
+        <div v-for="animal in arrayOfAnimals" v-bind:key="animal.name">
+            <p>{{ animal.name }}</p>
+        </div>
+    </div>
 </template>
 
 <style>

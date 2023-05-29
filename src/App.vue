@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import AnimalList from './components/AnimalList.vue';
+import GameBoard from './components/GameBoard.vue';
 import StartPage from './components/StartPage.vue';
 
 </script>
 
 <template>
-  <StartPage></StartPage>
+  <!-- <StartPage></StartPage> -->
+  <AnimalList/>
 </template>
 
 <style scoped>
