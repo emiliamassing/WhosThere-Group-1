@@ -1,12 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    let gameStarted = ref(false);
+    console.log(gameStarted);
+
+    function startGame() :void {
+        gameStarted.value = true;
+        console.log(gameStarted);
+    };
+</script>
 
 <template>
-    <h3>Who's There? - Animal edition</h3>
-    <button>Start game</button>
+    <h2>Who's There? - Animal edition</h2>
+    <button @click="startGame">Start game</button>
 </template>
 
 <style>
-    button {
-        background-color: rgb(255, 159, 63);
+    h2{
+        margin-bottom: 1em;
     }
+    
 </style>
