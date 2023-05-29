@@ -232,10 +232,23 @@ const gridClass: string ="gridContainer";
     </ul>
     <h4>Does the animal have: </h4>
     <select>
-        <option>Fur</option>
-        <option>Trunk</option>
+        <option>Stripes</option>
         <option>Tail</option>
+        <option>Hooves</option>
+        <option>Spots</option>
+        <option>Tall</option>
+        <option>Horns</option>
+        <option>Brown</option>
         <option>Paws</option>
+        <option>Fur</option>
+        <option>Mane</option>
+        <option>Horn</option>
+        <option>Grey</option>
+        <option>Furless</option>
+        <option>Trunk</option>
+        <option>Heavy</option>
+        <option>Monochrome</option>
+        <option>Climber</option>
     </select><br>
     <button>Ask Question</button>
 </template>
@@ -249,6 +262,10 @@ const gridClass: string ="gridContainer";
 
     .gridContainer .animal {
         border: 1px solid black;
+    }
+
+    img {
+        margin-top: 1rem;
     }
 
     li {
