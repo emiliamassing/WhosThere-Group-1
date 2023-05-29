@@ -6,7 +6,7 @@ import { IAnimalDesc } from '../models/IAnimalDesc';
 const arrayOfAnimals: IAnimal[] = [
     {
         name: 'Zebra',
-        picture: './assets/zebra.png',
+        picture: '../src/assets/zebra.png',
         description: {
             Stripes: true,
             Tail: true,
@@ -29,7 +29,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Deer',
-        picture: './assets/deer.png',
+        picture: '../src/assets/deer.png',
         description: {
             Stripes: false,
             Tail: true,
@@ -52,7 +52,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Elephant',
-        picture: './assets/elephant.png',
+        picture: '../src/assets/elephant.png',
         description: {
             Stripes: false,
             Tail: true,
@@ -75,7 +75,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Giraffe',
-        picture: './assets/giraffe.png',
+        picture: '../src/assets/giraffe.png',
         description: {
             Stripes: false,
             Tail: true,
@@ -98,7 +98,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Leo',
-        picture: './assets/leo.png',
+        picture: '../src/assets/leo.png',
         description: {
             Stripes: false,
             Tail: true,
@@ -121,7 +121,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Monkey',
-        picture: './assets/monkey.png',
+        picture: '../src/assets/monkey.png',
         description: {
             Stripes: false,
             Tail: false,
@@ -144,7 +144,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Panda',
-        picture: './assets/panda.png',
+        picture: '../src/assets/panda.png',
         description: {
             Stripes: false,
             Tail: false,
@@ -167,7 +167,7 @@ const arrayOfAnimals: IAnimal[] = [
     },
     {
         name: 'Rhino',
-        picture: './assets/rhino.png',
+        picture: '../src/assets/rhino.png',
         description: {
             Stripes: false,
             Tail: true,
@@ -190,7 +190,7 @@ const arrayOfAnimals: IAnimal[] = [
     },      
     {
         name: 'Tiger',
-        picture: './assets/tiger.png',
+        picture: '../src/assets/tiger.png',
         description: {
             Stripes: true,
             Tail: true,
@@ -218,13 +218,48 @@ const gridClass: string ="gridContainer";
 </script>
 
 <template>
+    <h3>Who's There? - Animal Edition</h3>
     <div :class="gridClass">
-        <div v-for="animal in arrayOfAnimals" v-bind:key="animal.name">
-            <p>{{ animal.name }}</p>
+        <div v-for="animal in arrayOfAnimals" v-bind:key="animal.name" class="animal">
+            <img :src="animal.picture">
+            <h3>{{ animal.name }}</h3>
         </div>
     </div>
+    <ul>
+        <li>Fur: No</li>
+        <li>Tail: Yes</li>
+        <li>Paws: Yes</li>
+    </ul>
+    <h4>Does the animal have: </h4>
+    <select>
+        <option>Fur</option>
+        <option>Trunk</option>
+        <option>Tail</option>
+        <option>Paws</option>
+    </select><br>
+    <button>Ask Question</button>
 </template>
 
 <style>
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 350px);
+        grid-template-rows: repeat(3, 350px);
+    }
 
+    .gridContainer .animal {
+        border: 1px solid black;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+
+    button {
+        margin-top: 1em;
+    }
 </style>

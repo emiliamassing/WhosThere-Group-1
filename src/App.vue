@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import AnimalList from './components/AnimalList.vue';
-import GameBoard from './components/GameBoard.vue';
-import StartPage from './components/StartPage.vue';
 
 </script>
 
 <template>
-  <!-- <StartPage></StartPage> -->
   <AnimalList/>
 </template>
 
