@@ -7,6 +7,11 @@
     function startGame() :void {
         gameStarted.value = true;
         console.log(gameStarted);
+        randomizeAnimal();
+    };
+
+    function randomizeAnimal() {
+        console.log('Animal');
     };
 </script>
 
