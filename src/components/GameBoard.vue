@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { arrayOfAnimals } from '../data/Animals';
-import { IAnimalDesc } from '../models/IAnimalDesc';
 import { IAnimal } from '../models/IAnimal';
 
 interface Animal {
@@ -35,6 +34,16 @@ const descriptionOptions: string[] = [
 ];
 
 function askQuestion() {
+    let randomizedAnimalDescription = props.description.description;
+    if(selectedQuestion.value in randomizedAnimalDescription) {
+     console.log("du hade rätt!");
+     
+    }
+    else {
+        console.log("Du hade fel!");
+        
+    }
+    randomizedAnimalDescription
     console.log('description from rando animal', props.description.description);
     console.log('selected question', selectedQuestion.value);
 }
