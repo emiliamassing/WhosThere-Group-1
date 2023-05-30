@@ -1,7 +1,18 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { arrayOfAnimals } from '../data/Animals';
+import { IAnimalDesc } from '../models/IAnimalDesc';
+import { IAnimal } from '../models/IAnimal';
+
+interface Animal {
+    description: IAnimal;
+}
 
 const gridClass: string ="gridContainer";
+
+const props = defineProps<Animal>();
+
+const selectedQuestion = ref('');
 
 const descriptionOptions: string[] = [
     'Stripes',
@@ -23,6 +34,11 @@ const descriptionOptions: string[] = [
     'Climber'
 ];
 
+function askQuestion() {
+    console.log('description from rando animal', props.description.description);
+    console.log('selected question', selectedQuestion.value);
+}
+
 </script>
 
 <template>
@@ -39,10 +55,11 @@ const descriptionOptions: string[] = [
         <li>Paws: Yes</li>
     </ul>
     <h4>Does the animal have: </h4>
-    <select>
-        <option v-for="description in descriptionOptions">{{ description }}</option>
+    <select v-model="selectedQuestion">
+        <option v-for="description in descriptionOptions" :value="description" :key="description">{{ description }}</option>
     </select><br>
-    <button>Ask Question</button>
+    <span>{{ selectedQuestion }}</span>
+    <button @click="askQuestion">Ask Question</button>
 </template>
 
 <style>

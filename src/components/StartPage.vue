@@ -2,9 +2,30 @@
     import { ref } from 'vue';
     import { arrayOfAnimals } from '../data/Animals';
     import Gameboard from '../components/GameBoard.vue';
+import { IAnimal } from '../models/IAnimal';
 
     let gameStarted = ref(false);
     console.log(gameStarted);
+
+    const randomizedAnimal = ref<IAnimal>({name: '', picture: '', description: {
+        Stripes: false,
+        Tail: false,
+        Hooves: false,
+        Spots: false,
+        Tall: false,
+        Horns: false,
+        Brown: false,
+        Paws: false,
+        Fur: false,
+        Mane: false,
+        Horn: false,
+        Grey: false,
+        Furless: false,
+        Trunk: false,
+        Heavy: false,
+        Monochrome: false,
+        Climber: false 
+    }});
 
     function startGame() :void {
         gameStarted.value = true;
@@ -16,7 +37,7 @@
         const randomAnimal = arrayOfAnimals[Math.floor(Math.random()*arrayOfAnimals.length)];
         console.log(randomAnimal);
         
-        return randomAnimal;
+        randomizedAnimal.value = randomAnimal;
     };
 </script>
 
@@ -26,7 +47,7 @@
         <button @click="startGame">Start game</button>
     </div>
     <template v-else>
-        <Gameboard></Gameboard>
+        <Gameboard :description="randomizedAnimal"></Gameboard>
     </template>
 </template>
 
