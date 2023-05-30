@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { ref } from 'vue';
     import { arrayOfAnimals } from '../data/Animals';
+    import Gameboard from '../components/GameBoard.vue';
 
     let gameStarted = ref(false);
     console.log(gameStarted);
@@ -20,9 +21,15 @@
 </script>
 
 <template>
-    <h2>Who's There? - Animal edition</h2>
-    <button @click="startGame">Start game</button>
+    <div v-if="!gameStarted">
+        <h2>Who's There? - Animal edition</h2>
+        <button @click="startGame">Start game</button>
+    </div>
+    <template v-else>
+        <Gameboard></Gameboard>
+    </template>
 </template>
+
 
 <style>
     h2{
