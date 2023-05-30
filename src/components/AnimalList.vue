@@ -215,6 +215,26 @@ const arrayOfAnimals: IAnimal[] = [
 
 const gridClass: string ="gridContainer";
 
+const descriptionOptions: string[] = [
+    'Stripes',
+    'Tail',
+    'Hooves',
+    'Spots',
+    'Tall',
+    'Horns',
+    'Brown',
+    'Paws',
+    'Fur',
+    'Mane',
+    'Horn',
+    'Grey',
+    'Furless',
+    'Trunk',
+    'Heavy',
+    'Monochrome',
+    'Climber'
+];
+
 </script>
 
 <template>
@@ -232,23 +252,7 @@ const gridClass: string ="gridContainer";
     </ul>
     <h4>Does the animal have: </h4>
     <select>
-        <option>Stripes</option>
-        <option>Tail</option>
-        <option>Hooves</option>
-        <option>Spots</option>
-        <option>Tall</option>
-        <option>Horns</option>
-        <option>Brown</option>
-        <option>Paws</option>
-        <option>Fur</option>
-        <option>Mane</option>
-        <option>Horn</option>
-        <option>Grey</option>
-        <option>Furless</option>
-        <option>Trunk</option>
-        <option>Heavy</option>
-        <option>Monochrome</option>
-        <option>Climber</option>
+        <option v-for="description in descriptionOptions">{{ description }}</option>
     </select><br>
     <button>Ask Question</button>
 </template>
