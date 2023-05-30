@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { ref } from 'vue';
+    import { arrayOfAnimals } from '../data/Animals';
 
     let gameStarted = ref(false);
     console.log(gameStarted);
@@ -11,7 +12,10 @@
     };
 
     function randomizeAnimal() {
-        console.log('Animal');
+        const randomAnimal = arrayOfAnimals[Math.floor(Math.random()*arrayOfAnimals.length)];
+        console.log(randomAnimal);
+        
+        return randomAnimal;
     };
 </script>
 
